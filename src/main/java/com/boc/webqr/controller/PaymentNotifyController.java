@@ -36,7 +36,7 @@ public class PaymentNotifyController implements BeanValidation<Object> {
     @Autowired
     MessageSource messageSource;
 
-    @GetMapping("/paymentNotify")
+    @PostMapping("/paymentNotify")
     public ResponseEntity paymentReceived(@RequestBody SwitchRequest requestBean,
                                           @RequestHeader(value = "authorization") String authString) {
 
