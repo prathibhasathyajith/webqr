@@ -21,7 +21,7 @@ const stompWebSocket = (data) => {
                 stompClient.disconnect();
                 localStorage.setItem("createWebsocket", "");
                 localStorage.removeItem("createWebsocket");
-                if (JSON.parse(response.body).code === '00') {
+                if (JSON.parse(response.body).code === '00') { // for switch success
                     $('.responseMessage').show();
                     $('.ui-success').show();
                     $('#qr-content-block').hide();
@@ -29,7 +29,15 @@ const stompWebSocket = (data) => {
                     setTimeout(()=>{
                         window.location.replace(JSON.parse(response.body).switchBean.successUrl);
                     },5000);
-                } else if (JSON.parse(response.body).code === '03'){
+                } else if (JSON.parse(response.body).code === '99'){ // for timeout
+                    $('.responseMessage').show();
+                    $('.ui-error').show();
+                    $('#qr-content-block').hide();
+                    $('#error-msg').show();
+                    setTimeout(()=>{
+                        window.location.replace(JSON.parse(response.body).requestBean.errorUrl);
+                    },5000);
+                } else if (JSON.parse(response.body).code === '02' || JSON.parse(response.body).code === '03'){ // for switch
                     $('.responseMessage').show();
                     $('.ui-error').show();
                     $('#qr-content-block').hide();

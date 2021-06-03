@@ -40,7 +40,7 @@ public class MessageVarList {
     public static final String SUCCESS = "00";
     public static final String ERROR = "01";
     public static final String EXCEPTION = "02";
-    public static final String TIMEOUT = "03";
+    public static final String TIMEOUT = "99";
     public static final String SUCCESS_MESSAGE = "success";
     public static final String ERROR_MESSAGE = "success";
     public static final String TIMEOUT_MESSAGE = "Payment Request Timeout";
