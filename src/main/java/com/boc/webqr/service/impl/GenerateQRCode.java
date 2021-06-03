@@ -51,7 +51,7 @@ public class GenerateQRCode implements GenerateQRString {
             // mandatory fields
             LQRMID = LQRMID.concat(networkType).concat(aqBank).concat(subAqBank);
 
-            // union pay
+            // china union pay
             CUPMID = CUPMID.concat(acquirerINN).concat(forwardingIIN);
 
             //MID to 16 digits. add 0 to front

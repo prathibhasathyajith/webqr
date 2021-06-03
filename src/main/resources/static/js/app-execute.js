@@ -4,7 +4,7 @@ const stompWebSocket = (data) => {
     // request params
     const token = btoa('admin:admin');
     // URL for websocket
-    let url = "ws://localhost:8080/WEBQR/websocket-qr";
+    let url = "ws://"+window.location.hostname+":"+window.location.port+"/WEBQR/websocket-qr";
 
     stompClient = Stomp.client(url);
     stompClient.connect({}, function (frame) {
@@ -41,9 +41,10 @@ const stompWebSocket = (data) => {
                     $('.responseMessage').show();
                     $('.ui-error').show();
                     $('#qr-content-block').hide();
+                    // $('#error-msg > .redirect-details').text(JSON.parse(response.body).message);
                     $('#error-msg').show();
                     setTimeout(()=>{
-                        window.location.replace(JSON.parse(response.body).requestBean.errorUrl);
+                        window.location.replace(JSON.parse(response.body).switchBean.errorUrl);
                     },5000);
                 }
 
@@ -106,7 +107,7 @@ if(!websocket){
 }else{
     localStorage.setItem("createWebsocket", "");
     localStorage.removeItem("createWebsocket");
-    alert("Sorry! You will be redirected to the history page")
+    alert("Sorry! You will be redirected to the history page");
     window.history.back();
 }
 

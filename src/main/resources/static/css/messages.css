@@ -14,7 +14,7 @@
   stroke-dasharray: 260.75219025px, 260.75219025px;
   stroke-dashoffset: 260.75219025px;
   transform: rotate(220deg);
-  transform-origin: center center;
+  transform-origin: 41.5px 41.5px;
   stroke-linecap: round;
   animation: ani-success-circle 1s ease-in both;
 }

@@ -77,12 +77,12 @@
         </div>
         <div class="msg-content" id="success-msg" style="display: none">
             <div class="redirect-details">Transaction Completed<br>
-                <span>You will redirected to the merchant site...</span>
+                <span>You will be redirecting to the merchant site...</span>
             </div>
         </div>
         <div class="msg-content" id="error-msg" style="display: none">
             <div class="redirect-details">Transaction Failed<br>
-                <span>You will redirected to the merchant site...</span>
+                <span>You will be redirecting to the merchant site...</span>
             </div>
         </div>
     </div>
