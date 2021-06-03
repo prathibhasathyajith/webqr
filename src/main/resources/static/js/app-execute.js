@@ -1,4 +1,3 @@
-
 let stompClient;
 let returnUrl;
 const stompWebSocket = (data) => {
